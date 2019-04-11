@@ -15,7 +15,7 @@ function filter_repetition(array) {
     }
     console.log (result);
 }
-let array_test=[1,2,3,1];
+let array_test=[1,2   ,3,1];
 console.time('map');
 filter_repetition(array_test);
 console.timeEnd('map');
