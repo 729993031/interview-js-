@@ -18,13 +18,10 @@ class promise {
         }
     }
     resolve(){
-        const contextThis=this;
-        return function (result) {
-            contextThis.eventSign=setTimeout(()=>{
-                contextThis.fulfilledList.map(fn=>fn(result));
-                clearTimeout(contextThis.eventSign)
-            },0)
-        }
+        return (result)=> this.eventSign=setTimeout(()=>{
+            this.fulfilledList.map(fn=>fn(result));
+            clearTimeout(this.eventSign)
+        },0);
     }
     reject(fn){
 
